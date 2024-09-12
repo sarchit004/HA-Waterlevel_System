@@ -1,0 +1,17 @@
+******Remember to replace 'binary_sensor.water_level_25%' with the name of your sensor******
+
+{% if is_state('binary_sensor.water_level_25%', 'off') and is_state('binary_sensor.water_level_50%', 'off') and is_state('binary_sensor.water_level_75%', 'off') and is_state('binary_sensor.water_level_100%', 'off') -%}
+  Empty
+{% elif is_state('binary_sensor.water_level_25%', 'on') and is_state('binary_sensor.water_level_50%', 'off') and is_state('binary_sensor.water_level_75%', 'off') and is_state('binary_sensor.water_level_100%', 'off') -%}
+  25% filled
+{% elif is_state('binary_sensor.water_level_25%', 'on') and is_state('binary_sensor.water_level_50%', 'on') and is_state('binary_sensor.water_level_75%', 'off') and is_state('binary_sensor.water_level_100%', 'off') -%}
+  50% filled
+{% elif is_state('binary_sensor.water_level_25%', 'on') and is_state('binary_sensor.water_level_50%', 'on') and is_state('binary_sensor.water_level_75%', 'on') and is_state('binary_sensor.water_level_100%', 'off') -%}
+  75% filled
+{% elif is_state('binary_sensor.water_level_25%', 'on') and is_state('binary_sensor.water_level_50%', 'on') and is_state('binary_sensor.water_level_75%', 'on') and is_state('binary_sensor.water_level_100%', 'on') -%}
+  Full
+{% elif is_state('binary_sensor.water_level_25%', 'unavailable') or is_state('binary_sensor.water_level_50%', 'unavailable') or is_state('binary_sensor.water_level_75%', 'unavailable') or is_state('binary_sensor.water_level_100%', 'unavailable') -%}
+  Unavailable
+{% else -%}
+  Error
+{% endif -%}
