@@ -1,0 +1,44 @@
+binary_sensor:
+  - platform: gpio
+    name: 25%
+    pin:
+      number: 12
+      mode:
+        input: True
+        pullup: True
+  - platform: gpio
+    name: 50%
+    pin:
+      number: 14
+      mode:
+        input: True
+        pullup: True
+  - platform: gpio
+    name: 75%
+    pin:
+      number: 4
+      mode:
+        input: True
+        pullup: True
+  - platform: gpio
+    name: 100%
+    pin:
+      number: 5
+      mode:
+        input: True
+        pullup: True
+light:
+  - platform: neopixelbus
+    variant: ws2812x
+    pin: 13
+    num_leds: 1
+    type: GRB
+    name: "WaterLvl LED"
+    effects:
+      - addressable_rainbow:
+      - addressable_color_wipe:
+      - addressable_scan:
+      - addressable_twinkle:
+      - addressable_random_twinkle:
+      - addressable_fireworks:
+      - addressable_flicker: 
