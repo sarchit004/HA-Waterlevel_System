@@ -6,6 +6,7 @@ binary_sensor:
       mode:
         input: True
         pullup: True
+      inverted: True
   - platform: gpio
     name: 50%
     pin:
@@ -13,6 +14,7 @@ binary_sensor:
       mode:
         input: True
         pullup: True
+      inverted: True
   - platform: gpio
     name: 75%
     pin:
@@ -20,6 +22,7 @@ binary_sensor:
       mode:
         input: True
         pullup: True
+      inverted: True
   - platform: gpio
     name: 100%
     pin:
@@ -27,6 +30,7 @@ binary_sensor:
       mode:
         input: True
         pullup: True
+      inverted: True
 light:
   - platform: neopixelbus
     variant: ws2812x
